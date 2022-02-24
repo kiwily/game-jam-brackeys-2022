@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_sky = SubResource( 1 )
 
 [node name="World" type="Spatial"]
 
@@ -10,3 +16,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2298, -23.6464, 2.4776 )
 
 [node name="TargetManager" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1281, -21.4771, -32.1505 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+light_color = Color( 0.580392, 0.14902, 0.333333, 1 )
+light_energy = 2.0
+light_specular = 3.0
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+light_color = Color( 0.168627, 0.635294, 0.101961, 1 )
+light_energy = 2.0
+light_specular = 3.0

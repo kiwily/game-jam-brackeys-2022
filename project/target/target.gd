@@ -10,6 +10,7 @@ export (float) var speed_bound: float
 export (float) var pos_min: float
 export (float) var pos_bound: float
 export (float) var rot_bound: float
+export (int) var scale_: int
 
 var speed_x
 var speed_y
@@ -34,9 +35,11 @@ func _ready():
 	object.transform.origin.y = pos_y
 	object.transform.origin.z = pos_z
 	
-	object.rotate_x(rng.randf_range(0, 3.2))
-	object.rotate_y(rng.randf_range(0, 3.2))
-	object.rotate_z(rng.randf_range(0, 3.2))
+	object.global_scale(Vector3(scale_, scale_, scale_))
+	
+	rotate_x(rng.randf_range(0, 2 * PI))
+	rotate_y(rng.randf_range(0, 2 * PI))
+	rotate_z(rng.randf_range(0, 2 * PI))
 	
 	speed_x = atan(speed_bound * rng.randfn() / (1 + pos_x))
 	speed_y = atan(speed_bound * rng.randfn() / (1 + pos_y))
