@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/race.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
+[ext_resource path="res://world/world.gd" type="Script" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -10,9 +12,9 @@ background_mode = 1
 background_sky = SubResource( 1 )
 
 [node name="World" type="Spatial"]
+script = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2298, -23.6464, 2.4776 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="TargetManager" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1281, -21.4771, -32.1505 )
@@ -30,3 +32,9 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0
 light_color = Color( 0.168627, 0.635294, 0.101961, 1 )
 light_energy = 2.0
 light_specular = 3.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Target" parent="." instance=ExtResource( 1 )]
