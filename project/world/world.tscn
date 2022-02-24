@@ -1,25 +1,3 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/race.obj" type="ArrayMesh" id=1]
+[gd_scene format=2]
 
 [node name="World" type="Spatial"]
-
-[node name="race" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1702, -26.4492, -34.9194 )
-mesh = ExtResource( 1 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
-material/5 = null
-material/6 = null
-material/7 = null
-material/8 = null
-material/9 = null
-material/10 = null
-material/11 = null
-material/12 = null
-material/13 = null
-material/14 = null
-material/15 = null
