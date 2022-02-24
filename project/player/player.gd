@@ -12,6 +12,7 @@ var velocity : Vector3 = Vector3()
 var direction : Vector3 = Vector3()
 
 onready var camera : Camera = $Camera
+onready var raycast : RayCast = $RayCast
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -61,6 +62,13 @@ func process_movement(delta) -> void:
 	
 	
 func _input(event):
+	if Input.is_action_just_pressed("check"):
+		raycast.force_raycast_update()
+		if raycast.is_colliding():
+			var collider : Object = raycast.get_collider()
+			if collider.has_method("destroy"):
+				collider.destroy()
+		
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		camera.rotate_x(deg2rad(event.relative.y * mouse_sensitivity * -1))
 		rotate_y(deg2rad(event.relative.x * mouse_sensitivity * -1))
