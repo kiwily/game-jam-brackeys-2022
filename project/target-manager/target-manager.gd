@@ -18,7 +18,7 @@ export (PackedScene) var target_scene: PackedScene
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	for i in range(number_of_target):
+	for _i in range(number_of_target):
 		add_target_at_random()
 
 func add_target_at_random() -> void:
@@ -53,6 +53,7 @@ func add_target_at_random() -> void:
 	
 	target.object = object_scene.instance()
 	target.add_child(target.object)
+	target.object.connect("destroyed", target, "_on_Object_Destroyed")
 	
 	target.init_object_movement(target_rayons, target_velocities, target_rotation_velocities)
 	target.object.global_scale(Vector3(object_scale, object_scale, object_scale))
