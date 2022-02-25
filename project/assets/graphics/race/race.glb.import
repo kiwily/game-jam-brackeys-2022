@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/race.glb-526dda1c712253b8f24b451cd96cd611.scn"
+path="res://.import/race.glb-3551ba585a39b839bc699cd4f2683b94.scn"
 
 [deps]
 
-source_file="res://assets/graphics/race.glb"
-dest_files=[ "res://.import/race.glb-526dda1c712253b8f24b451cd96cd611.scn" ]
+source_file="res://assets/graphics/race/race.glb"
+dest_files=[ "res://.import/race.glb-3551ba585a39b839bc699cd4f2683b94.scn" ]
 
 [params]
 

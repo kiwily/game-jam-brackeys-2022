@@ -56,4 +56,3 @@ func add_target_at_random() -> void:
 	
 	target.init_object_movement(target_rayons, target_velocities, target_rotation_velocities)
 	target.object.global_scale(Vector3(object_scale, object_scale, object_scale))
-	

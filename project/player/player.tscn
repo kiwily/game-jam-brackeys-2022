@@ -15,7 +15,7 @@ far = 5000.0
 shape = SubResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
-cast_to = Vector3( 0, 0, -10 )
+cast_to = Vector3( 0, 0, -4 )
 collide_with_areas = true
 collide_with_bodies = false
 
@@ -41,5 +41,5 @@ __meta__ = {
 light_color = Color( 0.00392157, 0, 0.615686, 1 )
 light_energy = 4.192
 light_specular = 2.278
-omni_range = 54.864
-omni_attenuation = 15.455
+omni_range = 14.0
+omni_attenuation = 11.7127
