@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/left_square_bracket.obj-8c75db91a1996caf1ce7634cb3f588ce.mesh"
+
+[deps]
+
+files=[ "res://.import/left_square_bracket.obj-8c75db91a1996caf1ce7634cb3f588ce.mesh" ]
+
+source_file="res://assets/font/left_square_bracket.obj"
+dest_files=[ "res://.import/left_square_bracket.obj-8c75db91a1996caf1ce7634cb3f588ce.mesh", "res://.import/left_square_bracket.obj-8c75db91a1996caf1ce7634cb3f588ce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/semi_colon.obj-43c0c7facdc3093dfdf2d5ce7cfdb66e.mesh"
+
+[deps]
+
+files=[ "res://.import/semi_colon.obj-43c0c7facdc3093dfdf2d5ce7cfdb66e.mesh" ]
+
+source_file="res://assets/font/semi_colon.obj"
+dest_files=[ "res://.import/semi_colon.obj-43c0c7facdc3093dfdf2d5ce7cfdb66e.mesh", "res://.import/semi_colon.obj-43c0c7facdc3093dfdf2d5ce7cfdb66e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
