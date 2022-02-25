@@ -1,61 +1,38 @@
 extends Spatial
 
-var rng = RandomNumberGenerator.new()
+var object : Spatial
 
-# Declare member variables here. Examples:
+# Velocities on rayons
+var velocities : Vector3
 
-onready var object : Spatial = $Race
+# Rotation velocities
+var rotation_velocities : Vector3
 
-export (float) var speed_bound: float
-export (float) var pos_min: float
-export (float) var pos_bound: float
-export (float) var rot_bound: float
-export (int) var scale_: int
+func _ready() -> void:
+	set_process(false)
 
-var speed_x
-var speed_y
-var speed_z
-
-var pos_x
-var pos_y
-var pos_z
-
-var rot_x
-var rot_y
-var rot_z
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	rng.randomize()
-	pos_x = pos_min + pos_bound * rng.randfn()
-	pos_y = pos_min + pos_bound * rng.randfn()
-	pos_z = pos_min + pos_bound * rng.randfn()
+func init_object_movement(rayons : Vector3, new_velocities : Vector3, new_rotation_velocities : Vector3) -> void:
+	# Rayons	
+	object.translate(rayons)
 	
-	object.transform.origin.x = pos_x
-	object.transform.origin.y = pos_y
-	object.transform.origin.z = pos_z
+	# Random initial deplacement
+	rotate_x(rand_range(0, 2 * PI))
+	rotate_y(rand_range(0, 2 * PI))
+	rotate_z(rand_range(0, 2 * PI))
 	
-	object.global_scale(Vector3(scale_, scale_, scale_))
+	# Set velocities
+	velocities = new_velocities
+	rotation_velocities = new_rotation_velocities
 	
-	rotate_x(rng.randf_range(0, 2 * PI))
-	rotate_y(rng.randf_range(0, 2 * PI))
-	rotate_z(rng.randf_range(0, 2 * PI))
-	
-	speed_x = atan(speed_bound * rng.randfn() / (1 + pos_x))
-	speed_y = atan(speed_bound * rng.randfn() / (1 + pos_y))
-	speed_z = atan(speed_bound * rng.randfn() / (1 + pos_z))
-	
-	rot_x = rot_bound * rng.randfn()
-	rot_y = rot_bound * rng.randfn()
-	rot_z = rot_bound * rng.randfn()
+	set_process(true)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotate_x(speed_x*delta)
-	rotate_y(speed_y*delta)
-	rotate_z(speed_z*delta)
+	# Move object around a elliptic trajectory
+	rotate_x(velocities.x * delta)
+	rotate_y(velocities.y * delta)
+	rotate_z(velocities.z * delta)
 	
-	object.rotate_x(rot_x*delta)
-	object.rotate_y(rot_y*delta)
-	object.rotate_z(rot_z*delta)
+	# Rotate object
+	object.rotate_x(rotation_velocities.x * delta)
+	object.rotate_y(rotation_velocities.y * delta)
+	object.rotate_z(rotation_velocities.z * delta)

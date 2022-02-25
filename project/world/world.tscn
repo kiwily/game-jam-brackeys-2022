@@ -15,8 +15,6 @@ background_sky = SubResource( 1 )
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="TargetManager" parent="." instance=ExtResource( 2 )]
-
 [node name="Player" parent="." instance=ExtResource( 5 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -38,3 +36,26 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="Target" parent="." instance=ExtResource( 1 )]
+
+[node name="Unreals" type="Spatial" parent="."]
+
+[node name="Near" parent="Unreals" instance=ExtResource( 2 )]
+object_scene = ExtResource( 1 )
+
+[node name="Medium" parent="Unreals" instance=ExtResource( 2 )]
+object_scene = ExtResource( 1 )
+object_scale = 25.0
+number_of_target = 50
+minimum_rayon = Vector3( 180, 180, 180 )
+maximum_rayon = Vector3( 220, 220, 220 )
+maximum_rotation_velocity = 0.2
+maximum_velocity = 0.04
+
+[node name="Far" parent="Unreals" instance=ExtResource( 2 )]
+object_scene = ExtResource( 1 )
+object_scale = 500.0
+number_of_target = 2
+minimum_rayon = Vector3( 480, 480, 480 )
+maximum_rayon = Vector3( 520, 520, 520 )
+maximum_rotation_velocity = 0.01
+maximum_velocity = 20.0
