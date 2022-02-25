@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://objects/race-object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/my-banana-object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://worlds/world.gd" type="Script" id=4]
@@ -51,10 +51,11 @@ transform = Transform( 400, 0, 0, 0, 400, 0, 0, 0, 400, 0, 0, -1000 )
 
 [node name="Reals" type="Spatial" parent="."]
 
-[node name="Girl" parent="Reals" instance=ExtResource( 2 )]
+[node name="Banana" parent="Reals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 1 )
 number_of_target = 1
-maximum_spawn_distance = Vector3( 0, 0, 0 )
+minimum_spawn_distance = Vector3( 0, 0, -50 )
+maximum_spawn_distance = Vector3( 0, 0, -20 )
 maximum_rayon = Vector3( 0, 0, 0 )
 
 [node name="Arrows" type="Spatial" parent="."]

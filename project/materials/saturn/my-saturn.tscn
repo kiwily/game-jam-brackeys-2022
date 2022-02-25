@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://materials/saturn/saturn.tres" type="Material" id=1]
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_unshaded = true
+albedo_color = Color( 0.133333, 0.0509804, 0.0509804, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_unshaded = true
+albedo_color = Color( 0.2, 0.0392157, 0.0392157, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_unshaded = true
+albedo_color = Color( 0.247059, 0.192157, 0.192157, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_unshaded = true
+albedo_color = Color( 0.227451, 0.00784314, 0.00784314, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_unshaded = true
+albedo_color = Color( 0.160784, 0.141176, 0.141176, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
+albedo_color = Color( 0.203922, 0.0352941, 0.0352941, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_unshaded = true
+albedo_color = Color( 0.109804, 0.0392157, 0.0392157, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_unshaded = true
+albedo_color = Color( 0.141176, 0.109804, 0.109804, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_unshaded = true
+albedo_color = Color( 0.14902, 0.0431373, 0.0431373, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_unshaded = true
+albedo_color = Color( 0.129412, 0.0705882, 0.0705882, 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+
+[node name="Saturn" type="Spatial"]
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+radial_segments = 14
+rings = 8
+material = ExtResource( 1 )
+
+[node name="CSGTorus2" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 0, -4.37114e-08, 0, 0, 0 )
+inner_radius = 2.45
+outer_radius = 2.5
+sides = 26
+ring_sides = 25
+material = SubResource( 15 )
+
+[node name="CSGTorus3" type="CSGTorus" parent="."]
+transform = Transform( -4.37114e-08, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 2.35
+outer_radius = 2.4
+sides = 26
+ring_sides = 25
+material = SubResource( 16 )
+
+[node name="CSGTorus4" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 2.25
+outer_radius = 2.3
+sides = 26
+ring_sides = 25
+material = SubResource( 17 )
+
+[node name="CSGTorus5" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 0, -4.37114e-08, 0, 0, 0 )
+inner_radius = 2.15
+outer_radius = 2.2
+sides = 26
+ring_sides = 25
+material = SubResource( 8 )
+
+[node name="CSGTorus6" type="CSGTorus" parent="."]
+transform = Transform( -4.37114e-08, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 2.05
+outer_radius = 2.1
+sides = 26
+ring_sides = 25
+material = SubResource( 9 )
+
+[node name="CSGTorus7" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 1.95
+outer_radius = 2.0
+sides = 26
+ring_sides = 25
+material = SubResource( 10 )
+
+[node name="CSGTorus8" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 0, -4.37114e-08, 0, 0, 0 )
+inner_radius = 1.85
+outer_radius = 1.9
+sides = 26
+ring_sides = 25
+material = SubResource( 11 )
+
+[node name="CSGTorus9" type="CSGTorus" parent="."]
+transform = Transform( -4.37114e-08, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 1.75
+outer_radius = 1.8
+sides = 26
+ring_sides = 25
+material = SubResource( 12 )
+
+[node name="CSGTorus10" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+inner_radius = 1.65
+outer_radius = 1.7
+sides = 26
+ring_sides = 25
+material = SubResource( 13 )
+
+[node name="CSGTorus11" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 0, -4.37114e-08, 0, 0, 0 )
+inner_radius = 1.55
+outer_radius = 1.6
+sides = 26
+ring_sides = 25
+material = SubResource( 14 )
