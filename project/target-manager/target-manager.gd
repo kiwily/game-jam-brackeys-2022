@@ -21,21 +21,22 @@ func _ready():
 		a.transform.origin.z = rng.randf_range(-max_z, max_z)
 		a.scale_ = 1
 		add_child(a)
-	for i in range(50):
+	for i in range(35):
 		var a = target_scene.instance()
-		a.pos_bound = 20
-		a.pos_min = 200
+		a.pos_bound = 100
+		a.pos_min = 300
 		a.rot_bound = 0.2
 		a.speed_bound = 0.04
-		a.scale_ = 40
+		a.scale_ = 70
 		add_child(a)
-	for i in range(2):
+	for i in range(3):
 		var a = target_scene.instance()
-		a.pos_bound = 20
-		a.pos_min = 500
+		a.pos_bound = 200
+		a.pos_min = 700
 		a.rot_bound = 0.01
-		a.speed_bound = 20
+		a.speed_bound = 0#20
 		a.scale_ = 500
+		a.transform.origin.x = 10
 		add_child(a)
 
 
