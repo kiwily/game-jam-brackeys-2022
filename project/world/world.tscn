@@ -1,25 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/race-object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://world/world.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-
-[sub_resource type="ProceduralSky" id=1]
-
-[sub_resource type="Environment" id=2]
-background_mode = 1
-background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.8, 0.0196078, 0, 1 )
-ambient_light_energy = 16.0
-dof_blur_far_enabled = true
-dof_blur_far_distance = 0.03
-dof_blur_far_transition = 97.23
-glow_intensity = 1.0
-glow_strength = 1.6
-glow_bloom = 0.02
-glow_blend_mode = 0
+[ext_resource path="res://world/world.tres" type="Environment" id=6]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
@@ -27,7 +13,7 @@ script = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 5 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = ExtResource( 6 )
 
 [node name="Pourpre" type="DirectionalLight" parent="."]
 light_color = Color( 0.580392, 0.14902, 0.333333, 1 )

@@ -37,5 +37,6 @@ func _process(delta):
 	object.rotate_y(rotation_velocities.y * delta)
 	object.rotate_z(rotation_velocities.z * delta)
 
-func _on_Race_destroyed():
+func _on_destroyed():
 	queue_free()
+
