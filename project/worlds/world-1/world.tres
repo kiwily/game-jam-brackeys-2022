@@ -5,11 +5,9 @@
 [resource]
 background_mode = 1
 background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.8, 0.0196078, 0, 1 )
-ambient_light_energy = 16.0
 dof_blur_far_enabled = true
-dof_blur_far_distance = 0.03
-dof_blur_far_transition = 97.23
+dof_blur_far_distance = 0.3
+dof_blur_far_transition = 100.0
 glow_intensity = 1.0
 glow_strength = 1.6
 glow_bloom = 0.02

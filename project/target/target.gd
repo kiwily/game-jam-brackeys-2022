@@ -1,5 +1,7 @@
 extends Spatial
 
+signal destroyed
+
 var object : Spatial
 
 # Velocities on rayons
@@ -37,6 +39,7 @@ func _process(delta):
 	object.rotate_y(rotation_velocities.y * delta)
 	object.rotate_z(rotation_velocities.z * delta)
 
-func _on_destroyed():
+func _on_Object_Destroyed():
+	emit_signal("destroyed")
 	queue_free()
 
