@@ -41,6 +41,7 @@ light_specular = 2.0
 
 [node name="Near" parent="Unreals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 1 )
+number_of_target = 250
 
 [node name="Medium" parent="Unreals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 1 )

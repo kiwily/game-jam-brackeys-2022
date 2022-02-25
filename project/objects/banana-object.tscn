@@ -91,7 +91,8 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[node name="Saturn" type="Area"]
+[node name="Banana" type="Area"]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="banana" parent="." instance=ExtResource( 1 )]

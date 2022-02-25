@@ -41,7 +41,7 @@ light_specular = 2.0
 
 [node name="Near" parent="Unreals" instance=ExtResource( 5 )]
 object_scene = ExtResource( 2 )
-number_of_target = 30
+number_of_target = 20
 minimum_spawn_distance = Vector3( -15, -15, -15 )
 maximum_spawn_distance = Vector3( 15, 15, 15 )
 
