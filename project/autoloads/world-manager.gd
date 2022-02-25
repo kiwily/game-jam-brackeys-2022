@@ -1,7 +1,7 @@
 extends Node
 
 var current_world : int = 1
-var number_of_world : int = 2
+var number_of_world : int = 4
 
 func get_world_path(world_index : int) -> String:
 	return "res://worlds/world-%d/world.tscn" % world_index

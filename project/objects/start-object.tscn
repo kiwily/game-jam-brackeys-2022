@@ -68,7 +68,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "destroy"
 anims/RESET = SubResource( 2 )
 anims/destroy = SubResource( 3 )
 

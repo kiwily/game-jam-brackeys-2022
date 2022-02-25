@@ -49,13 +49,13 @@ light_specular = 2.0
 
 [node name="Tuto" parent="Unreals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 8 )
-object_scale = 500.0
+object_scale = 400.0
 number_of_target = 2
 minimum_spawn_distance = Vector3( 0, 0, 0 )
 maximum_spawn_distance = Vector3( 0, 0, 0 )
 start_with_random_angle = false
-minimum_rayon = Vector3( -100, 0, -1000 )
-maximum_rayon = Vector3( -100, 0, -1000 )
+minimum_rayon = Vector3( 0, 0, -1000 )
+maximum_rayon = Vector3( 0, 0, -1000 )
 maximum_rotation_velocity = 0.0
 maximum_velocity = 0.0
 
