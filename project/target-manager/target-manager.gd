@@ -5,7 +5,10 @@ export (float) var object_scale : float = 1
 
 export (int) var number_of_target : int = 1000
 
+export (Vector3) var minimum_spawn_distance : Vector3 = Vector3(-50, -50, -50)
 export (Vector3) var maximum_spawn_distance : Vector3 = Vector3(50, 50, 50)
+
+export (bool) var start_with_random_angle : bool = true
 
 export (Vector3) var minimum_rayon : Vector3 = Vector3(0, 0, 0)
 export (Vector3) var maximum_rayon : Vector3 = Vector3(20, 20, 20)
@@ -25,9 +28,9 @@ func add_target_at_random() -> void:
 	var target : Spatial = target_scene.instance()
 	# Translate target
 	target.translate(Vector3(
-		rand_range(-maximum_spawn_distance.x, maximum_spawn_distance.x),
-		rand_range(-maximum_spawn_distance.y, maximum_spawn_distance.y),
-		rand_range(-maximum_spawn_distance.z, maximum_spawn_distance.z)
+		rand_range(minimum_spawn_distance.x, maximum_spawn_distance.x),
+		rand_range(minimum_spawn_distance.y, maximum_spawn_distance.y),
+		rand_range(minimum_spawn_distance.z, maximum_spawn_distance.z)
 	))
 	# Target rayons
 	var target_rayons : Vector3 = Vector3(
@@ -56,5 +59,5 @@ func add_target_at_random() -> void:
 	target.object.connect("destroyed", target, "_on_Object_Destroyed")
 	target.object.connect("destroy", target, "_on_Object_Destroy")
 	
-	target.init_object_movement(target_rayons, target_velocities, target_rotation_velocities)
+	target.init_object_movement(target_rayons, target_velocities, target_rotation_velocities, start_with_random_angle)
 	target.object.global_scale(Vector3(object_scale, object_scale, object_scale))

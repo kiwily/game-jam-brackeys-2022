@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/U_.obj-7c9b3927b2e93a602f1e67a61d3be0a4.mesh"
+
+[deps]
+
+files=[ "res://.import/U_.obj-7c9b3927b2e93a602f1e67a61d3be0a4.mesh" ]
+
+source_file="res://assets/font/U_.obj"
+dest_files=[ "res://.import/U_.obj-7c9b3927b2e93a602f1e67a61d3be0a4.mesh", "res://.import/U_.obj-7c9b3927b2e93a602f1e67a61d3be0a4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

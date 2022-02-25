@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/underscore.obj-be921c4025aae83a3984e3604ed1ed66.mesh"
+
+[deps]
+
+files=[ "res://.import/underscore.obj-be921c4025aae83a3984e3604ed1ed66.mesh" ]
+
+source_file="res://assets/font/underscore.obj"
+dest_files=[ "res://.import/underscore.obj-be921c4025aae83a3984e3604ed1ed66.mesh", "res://.import/underscore.obj-be921c4025aae83a3984e3604ed1ed66.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

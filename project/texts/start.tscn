@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/font/S_.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://texts/romantic_material.tres" type="Material" id=2]
+[ext_resource path="res://assets/font/a.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/font/r.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/font/t.obj" type="ArrayMesh" id=5]
+
+[node name="Start" type="Spatial"]
+
+[node name="S_" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0, 0 )
+material_override = ExtResource( 2 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="t" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 2 )
+
+[node name="a" type="MeshInstance" parent="."]
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 2 )
+
+[node name="r" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 2 )
+
+[node name="t2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = ExtResource( 2 )

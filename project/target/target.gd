@@ -14,14 +14,15 @@ var rotation_velocities : Vector3
 func _ready() -> void:
 	set_process(false)
 
-func init_object_movement(rayons : Vector3, new_velocities : Vector3, new_rotation_velocities : Vector3) -> void:
+func init_object_movement(rayons : Vector3, new_velocities : Vector3, new_rotation_velocities : Vector3, start_with_random_angle: bool) -> void:
 	# Rayons	
 	object.translate(rayons)
 	
 	# Random initial deplacement
-	rotate_x(rand_range(0, 2 * PI))
-	rotate_y(rand_range(0, 2 * PI))
-	rotate_z(rand_range(0, 2 * PI))
+	if start_with_random_angle:
+		rotate_x(rand_range(0, 2 * PI))
+		rotate_y(rand_range(0, 2 * PI))
+		rotate_z(rand_range(0, 2 * PI))
 	
 	# Set velocities
 	velocities = new_velocities
