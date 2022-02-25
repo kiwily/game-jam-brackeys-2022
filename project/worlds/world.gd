@@ -17,7 +17,7 @@ func _ready():
 			target.connect("destroyed", self, "_on_Target_destroyed")
 			target.connect("destroy", self, "_on_Target_destroy")
 	# Connect all unreal signal
-	if reals.get_child_count() > 0:
+	if unreals.get_child_count() > 0:
 		for child in unreals.get_children():
 			for target in child.get_children():
 				target.connect("destroy", self, "_on_Unreal_Target_destroy", [target])
