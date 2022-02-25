@@ -19,8 +19,7 @@ func _process(_delta):
 	if err == ERR_FILE_EOF: # Finished loading
 		var resource : Resource = loader.get_resource()
 		loader = null
-# warning-ignore:return_value_discarded
-		get_tree().change_scene_to(resource)
+		WorldManager.change_world(resource)
 	elif err == OK:
 		print('Scene is loading ...')
 	else:
