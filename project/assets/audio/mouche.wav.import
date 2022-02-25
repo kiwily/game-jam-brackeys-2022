@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mouche.wav-53396b28de8f84b4b25f127aa6bc22c4.sample"
+
+[deps]
+
+source_file="res://assets/audio/mouche.wav"
+dest_files=[ "res://.import/mouche.wav-53396b28de8f84b4b25f127aa6bc22c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

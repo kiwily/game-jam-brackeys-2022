@@ -3,7 +3,7 @@ extends Node
 var final_viewport : Viewport
 
 var current_world : int = 1
-var number_of_world : int = 6
+var number_of_world : int = 7
 
 func _ready():
 	final_viewport = get_tree().get_current_scene().get_node("ViewportContainerSobol/Viewport")

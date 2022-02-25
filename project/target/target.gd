@@ -11,6 +11,8 @@ var velocities : Vector3
 # Rotation velocities
 var rotation_velocities : Vector3
 
+var prouf_sound = preload("res://assets/audio/wov.wav")
+
 func _ready() -> void:
 	set_process(false)
 
@@ -43,6 +45,8 @@ func _process(delta):
 
 func _on_Object_Destroy():
 	emit_signal("destroy")
+	$Sound.stream = prouf_sound
+	$Sound.play()
 
 func _on_Object_Destroyed():
 	emit_signal("destroyed")

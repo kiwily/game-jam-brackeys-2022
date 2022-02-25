@@ -3,6 +3,8 @@ extends KinematicBody
 signal world_entered
 signal world_exited
 
+var travel_sound = preload("res://assets/audio/travel.wav")
+
 export (float) var max_forward_speed : float = 10
 export (float) var rotation_speed : float = 10
 export (float) var acceleration : float = 10
@@ -96,6 +98,8 @@ func enter_world():
 
 func exit_world():
 	animation_player_world.play("world-out")
+	$Sound.stream = travel_sound
+	$Sound.play()
 
 func _on_AnimationPlayerWorld_animation_finished(anim_name):
 	if anim_name == "world-in":

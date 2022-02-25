@@ -5,8 +5,8 @@
 [ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://worlds/world.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://worlds/world-1/world.tres" type="Environment" id=6]
-[ext_resource path="res://texts/titre.tscn" type="PackedScene" id=8]
+[ext_resource path="res://worlds/world-environment.tres" type="Environment" id=6]
+[ext_resource path="res://texts/title.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
