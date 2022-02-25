@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/my-banana-object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/arrow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://worlds/world.gd" type="Script" id=4]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://worlds/world-environment.tres" type="Environment" id=6]
+[ext_resource path="res://texts/instructions-world-2.tscn" type="PackedScene" id=8]
+
+[node name="World2" type="Spatial"]
+script = ExtResource( 4 )
+arrow_scene = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+
+[node name="Lights" type="Spatial" parent="."]
+
+[node name="Rouge" type="DirectionalLight" parent="Lights"]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0 )
+light_color = Color( 1, 0.192157, 0.00784314, 1 )
+light_energy = 0.5
+light_specular = 1.0
+
+[node name="Jaune" type="DirectionalLight" parent="Lights"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+light_color = Color( 0.8, 0.803922, 0, 1 )
+light_specular = 2.0
+
+[node name="Orange" type="DirectionalLight" parent="Lights"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+light_color = Color( 0.87451, 0.521569, 0.0627451, 1 )
+light_energy = 0.4
+light_specular = 1.0
+
+[node name="Vert" type="DirectionalLight" parent="Lights"]
+light_color = Color( 0.27451, 0.713726, 0, 1 )
+light_specular = 2.0
+
+[node name="Instructions" parent="." instance=ExtResource( 8 )]
+transform = Transform( 400, 0, 0, 0, 400, 0, 0, 0, 400, 0, 0, -1000 )
+
+[node name="Reals" type="Spatial" parent="."]
+
+[node name="Banana" parent="Reals" instance=ExtResource( 2 )]
+object_scene = ExtResource( 1 )
+object_scale = 10.0
+number_of_target = 1
+minimum_spawn_distance = Vector3( 0, -5, -50 )
+maximum_spawn_distance = Vector3( 0, -5, -20 )
+maximum_rayon = Vector3( 0, 0, 0 )
+
+[node name="Arrows" type="Spatial" parent="."]
+
+[node name="Unreals" type="Spatial" parent="."]
