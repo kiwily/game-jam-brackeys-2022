@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://objects/race-object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://worlds/world.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://worlds/world-1/world.tres" type="Environment" id=6]
+[ext_resource path="res://worlds/world-environment.tres" type="Environment" id=6]
 [ext_resource path="res://target/target.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/arrow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/house-object.tscn" type="PackedScene" id=9]
 
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
+arrow_scene = ExtResource( 8 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 6 )
@@ -75,7 +78,10 @@ maximum_velocity = 50.0
 [node name="Reals" type="Spatial" parent="."]
 
 [node name="TargetManager" parent="Reals" instance=ExtResource( 2 )]
-object_scene = ExtResource( 1 )
+object_scene = ExtResource( 9 )
+object_scale = 10.0
 number_of_target = 1
 maximum_spawn_distance = Vector3( 0, 0, 0 )
 maximum_rayon = Vector3( 0, 0, 0 )
+
+[node name="Arrows" type="Spatial" parent="."]
