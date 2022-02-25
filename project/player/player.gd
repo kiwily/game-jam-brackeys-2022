@@ -9,7 +9,8 @@ export (float) var acceleration : float = 10
 export (float) var deceleration : float = 10
 export (float) var mouse_sensitivity : float = 0.1
 
-onready var animation_player : AnimationPlayer = $AnimationPlayer
+onready var animation_player_world : AnimationPlayer = $AnimationPlayerWorld
+onready var animation_player_crosshair : AnimationPlayer = $AnimationPlayerCrosshair
 
 
 var velocity : Vector3 = Vector3()
@@ -18,17 +19,39 @@ var direction : Vector3 = Vector3()
 onready var camera : Camera = $Camera
 onready var raycast : RayCast = $RayCast
 
+var raycast_collider : Object
+var is_crosshair_locked : bool = false
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-
 func _process(delta) -> void:
+	process_raycast()
 	process_input()
 	process_movement(delta)
+	
+func process_raycast() -> void:
+	raycast_collider = null
+	if raycast.is_colliding():
+		raycast_collider = raycast.get_collider()
+		if not is_crosshair_locked:
+			animation_player_crosshair.play("lock-in")
+			is_crosshair_locked = true
+	else:
+		if is_crosshair_locked:
+			animation_player_crosshair.play("lock-out")
+			is_crosshair_locked = false
+		
 	
 func process_input() -> void:
 	direction = Vector3()
 	var input_movement_vector : Vector2 = Vector2()
+	
+	# Check action
+	if Input.is_action_just_pressed("check"):
+		if raycast_collider:
+			if raycast_collider.has_method("destroy"):
+				raycast_collider.destroy()
 	
 	if Input.is_action_pressed("forward"):
 		input_movement_vector.y += 1
@@ -64,27 +87,17 @@ func process_movement(delta) -> void:
 	velocity = move_and_slide(velocity)
 
 func _input(event):
-	if Input.is_action_just_pressed("check"):
-		print('Check')
-		raycast.force_raycast_update()
-		if raycast.is_colliding():
-			print('Colliding')
-			var collider : Object = raycast.get_collider()
-			if collider.has_method("destroy"):
-				print('BOOM')
-				collider.destroy()
-		
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_object_local(Vector3(0, 1, 0), deg2rad(event.relative.x * mouse_sensitivity * -1))
 		rotate_object_local(Vector3(1, 0, 0), deg2rad(event.relative.y * mouse_sensitivity * -1))
 
 func enter_world():
-	animation_player.play("world-in")
+	animation_player_world.play("world-in")
 
 func exit_world():
-	animation_player.play("world-out")
+	animation_player_world.play("world-out")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayerWorld_animation_finished(anim_name):
 	if anim_name == "world-in":
 		emit_signal("world_entered")
 	elif anim_name == "world-out":

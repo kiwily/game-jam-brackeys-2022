@@ -11,5 +11,4 @@ func destroy() -> void:
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "destroy":
-		print('DESTROYED')
 		emit_signal("destroyed")

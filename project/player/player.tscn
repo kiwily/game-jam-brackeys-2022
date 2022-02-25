@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/crosshair007.png" type="Texture" id=2]
@@ -51,6 +51,53 @@ tracks/0/keys = {
 "values": [ 70.0, 1.0 ]
 }
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "lock-in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "lock-out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 45.0, 0.0 ]
+}
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -62,6 +109,7 @@ far = 5000.0
 shape = SubResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
+enabled = true
 cast_to = Vector3( 0, 0, -10 )
 collide_with_areas = true
 collide_with_bodies = false
@@ -91,9 +139,14 @@ light_specular = 2.278
 omni_range = 15.0
 omni_attenuation = 12.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerWorld" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/world-in = SubResource( 3 )
 anims/world-out = SubResource( 4 )
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[node name="AnimationPlayerCrosshair" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/lock-in = SubResource( 6 )
+anims/lock-out = SubResource( 7 )
+
+[connection signal="animation_finished" from="AnimationPlayerWorld" to="." method="_on_AnimationPlayerWorld_animation_finished"]
