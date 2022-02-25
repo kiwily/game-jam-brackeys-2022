@@ -1,12 +1,12 @@
 extends Node
 
-var world_container : Node2D
+var final_viewport : Viewport
 
 var current_world : int = 1
 var number_of_world : int = 4
 
 func _ready():
-	world_container = get_tree().get_current_scene()
+	final_viewport = get_tree().get_current_scene().get_node("ViewportContainerBlurY/Viewport/ViewportContainerBlurX/Viewport/ViewportContainerSobol/Viewport")
 
 func get_world_path(world_index : int) -> String:
 	return "res://worlds/world-%d/world.tscn" % world_index
@@ -21,8 +21,7 @@ func goto_next_world():
 	SceneManager.goto_scene(get_world_path(current_world))
 	
 func change_world(new_world_resource : Resource):
-	var world_viewport : Viewport = world_container.get_node("ViewportContainer/Viewport")
-	for node in world_viewport.get_children():
-		world_viewport.remove_child(node)
+	for node in final_viewport.get_children():
+		final_viewport.remove_child(node)
 		node.queue_free()
-	world_viewport.add_child(new_world_resource.instance())
+	final_viewport.add_child(new_world_resource.instance())
