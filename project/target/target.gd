@@ -1,6 +1,7 @@
 extends Spatial
 
 signal destroyed
+signal destroy
 
 var object : Spatial
 
@@ -39,6 +40,9 @@ func _process(delta):
 	object.rotate_x(rotation_velocities.x * delta)
 	object.rotate_y(rotation_velocities.y * delta)
 	object.rotate_z(rotation_velocities.z * delta)
+
+func _on_Object_Destroy():
+	emit_signal("destroy")
 
 func _on_Object_Destroyed():
 	emit_signal("destroyed")

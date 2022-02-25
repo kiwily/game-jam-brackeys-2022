@@ -1,7 +1,5 @@
 extends Spatial
 
-signal succeeded
-
 onready var player : KinematicBody = $Player
 onready var reals : Spatial = $Reals
 
@@ -13,7 +11,10 @@ func _ready():
 	for child in reals.get_children():
 		for target in child.get_children():
 			target.connect("destroyed", self, "_on_Target_destroyed")
-
+			target.connect("destroy", self, "_on_Target_destroy")
+	# Animation
+	player.enter_world()
+	
 func _process(_delta):
 	pass
 #	var player_to_target : Vector3 = (target.global_transform.origin - player.global_transform.origin).normalized()
@@ -23,11 +24,12 @@ func _process(_delta):
 #	audio_stream_player.pitch_scale = 2 - dot
 
 
+func _on_Target_destroy():
+	player.exit_world()
+
 func _on_Target_destroyed():
-	set_process(false)
-	emit_signal("succeeded")
-	print("Succeeded")
 	if WorldManager.has_next_world():
 		WorldManager.goto_next_world()
 	else:
 		print("Game Finish")
+

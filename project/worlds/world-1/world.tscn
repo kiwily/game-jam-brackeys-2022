@@ -12,12 +12,12 @@
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 6 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 
@@ -58,8 +58,6 @@ minimum_rayon = Vector3( -1000, 0, -1000 )
 maximum_rayon = Vector3( -1000, 0, -1000 )
 maximum_rotation_velocity = 0.0
 maximum_velocity = 0.0
-
-[node name="Target" parent="." instance=ExtResource( 7 )]
 
 [node name="Reals" type="Spatial" parent="."]
 
