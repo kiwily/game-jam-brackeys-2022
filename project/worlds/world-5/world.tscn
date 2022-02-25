@@ -7,7 +7,7 @@
 [ext_resource path="res://objects/arrow.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/my-house-object.tscn" type="PackedScene" id=9]
 
-[node name="World" type="Spatial"]
+[node name="World2" type="Spatial"]
 script = ExtResource( 4 )
 arrow_scene = ExtResource( 6 )
 
