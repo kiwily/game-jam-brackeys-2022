@@ -6,7 +6,7 @@ var current_world : int = 1
 var number_of_world : int = 7
 
 func _ready():
-	final_viewport = get_tree().get_current_scene().get_node("ViewportContainerSobol/Viewport")
+	final_viewport = get_tree().get_current_scene().get_node("ViewportContainer/Viewport")
 
 func get_world_path(world_index : int) -> String:
 	return "res://worlds/world-%d/world.tscn" % world_index

@@ -7,9 +7,6 @@ onready var reals : Spatial = $Reals
 onready var unreals : Spatial = $Unreals
 onready var arrows : Spatial = $Arrows
 
-onready var audio_stream_player : AudioStreamPlayer = $AudioStreamPlayer
-
-
 func _ready():
 	# Connect all real signal
 	for child in reals.get_children():
