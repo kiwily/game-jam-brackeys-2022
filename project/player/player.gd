@@ -36,9 +36,8 @@ func process_input() -> void:
 		input_movement_vector.x -= 1
 	input_movement_vector = input_movement_vector.normalized()
 	
-	var camera_xform : Transform = camera.global_transform
-	direction += - camera_xform.basis.z * input_movement_vector.y
-	direction += camera_xform.basis.x * input_movement_vector.x
+	direction += - global_transform.basis.z * input_movement_vector.y
+	direction += global_transform.basis.x * input_movement_vector.x
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
@@ -70,6 +69,6 @@ func _input(event):
 				collider.destroy()
 		
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		camera.rotate_x(deg2rad(event.relative.y * mouse_sensitivity * -1))
-		rotate_y(deg2rad(event.relative.x * mouse_sensitivity * -1))
+		rotate_object_local(Vector3(0, 1, 0), deg2rad(event.relative.x * mouse_sensitivity * -1))
+		rotate_object_local(Vector3(1, 0, 0), deg2rad(event.relative.y * mouse_sensitivity * -1))
 

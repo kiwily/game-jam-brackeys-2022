@@ -9,7 +9,7 @@ func goto_scene(path : String) -> void:
 		return
 	set_process(true)
 	
-func _process(delta):
+func _process(_delta):
 	if loader == null:
 		set_process(false)
 		return
@@ -19,6 +19,7 @@ func _process(delta):
 	if err == ERR_FILE_EOF: # Finished loading
 		var resource : Resource = loader.get_resource()
 		loader = null
+# warning-ignore:return_value_discarded
 		get_tree().change_scene_to(resource)
 	elif err == OK:
 		print('Scene is loading ...')
