@@ -4,7 +4,7 @@
 [ext_resource path="res://objects/object.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=4]
-extents = Vector3( 0.7, 0.4, 0.7 )
+extents = Vector3( 0.5, 0.8, 0.2 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
