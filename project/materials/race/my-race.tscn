@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/race/my-race-1.tres" type="Material" id=1]
+[ext_resource path="res://materials/race/my-race-3.tres" type="Material" id=2]
+[ext_resource path="res://materials/race/my-race-2.tres" type="Material" id=3]
+[ext_resource path="res://assets/graphics/race/race.glb" type="PackedScene" id=4]
+
+[node name="race" instance=ExtResource( 4 )]
+
+[node name="body" parent="tmpParent/race" index="0"]
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 3 )
+material/2 = ExtResource( 2 )

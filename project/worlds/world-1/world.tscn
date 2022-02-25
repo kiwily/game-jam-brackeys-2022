@@ -5,14 +5,20 @@
 [ext_resource path="res://assets/audio/Ludum Dare 38 - Track 8.wav" type="AudioStream" id=3]
 [ext_resource path="res://worlds/world.gd" type="Script" id=4]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://worlds/world-1/world.tres" type="Environment" id=6]
 [ext_resource path="res://texts/titre.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+fog_depth_begin = 0.0
+fog_depth_end = 4000.0
+adjustment_enabled = true
+adjustment_saturation = 5.36
 
 [node name="World" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 6 )
+environment = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
