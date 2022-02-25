@@ -54,6 +54,7 @@ func add_target_at_random() -> void:
 	target.object = object_scene.instance()
 	target.add_child(target.object)
 	target.object.connect("destroyed", target, "_on_Object_Destroyed")
+	target.object.connect("destroy", target, "_on_Object_Destroy")
 	
 	target.init_object_movement(target_rayons, target_velocities, target_rotation_velocities)
 	target.object.global_scale(Vector3(object_scale, object_scale, object_scale))
