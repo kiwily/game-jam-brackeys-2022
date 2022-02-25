@@ -15,7 +15,7 @@ far = 8192.0
 shape = SubResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
-cast_to = Vector3( 0, 0, -10 )
+cast_to = Vector3( 0, 0, -4 )
 collide_with_areas = true
 collide_with_bodies = false
 
