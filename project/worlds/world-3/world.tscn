@@ -48,7 +48,9 @@ light_specular = 2.0
 
 [node name="Near" parent="Unreals" instance=ExtResource( 5 )]
 object_scene = ExtResource( 2 )
-number_of_target = 10
+number_of_target = 30
+minimum_spawn_distance = Vector3( -15, -15, -15 )
+maximum_spawn_distance = Vector3( 15, 15, 15 )
 
 [node name="Medium" parent="Unreals" instance=ExtResource( 5 )]
 object_scene = ExtResource( 2 )
@@ -61,8 +63,8 @@ maximum_rotation_velocity = 0.2
 maximum_velocity = 0.04
 
 [node name="Far" parent="Unreals" instance=ExtResource( 5 )]
-object_scene = ExtResource( 7 )
-object_scale = 700.0
+object_scene = ExtResource( 2 )
+object_scale = 500.0
 number_of_target = 1
 maximum_spawn_distance = Vector3( 100, 100, 100 )
 minimum_rayon = Vector3( 900, 900, 900 )
