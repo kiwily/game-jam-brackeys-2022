@@ -5,7 +5,6 @@
 [resource]
 background_mode = 1
 background_sky = SubResource( 1 )
-background_color = Color( 0.631373, 0.631373, 0.631373, 1 )
-fog_sun_amount = 1.0
 dof_blur_far_enabled = true
-dof_blur_far_distance = 45.0
+dof_blur_far_distance = 50.0
+dof_blur_far_quality = 0
