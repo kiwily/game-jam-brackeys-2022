@@ -53,7 +53,6 @@ number_of_target = 50
 minimum_rayon = Vector3( 180, 180, 180 )
 maximum_rayon = Vector3( 220, 220, 220 )
 maximum_rotation_velocity = 0.2
-maximum_velocity = 0.04
 
 [node name="Far" parent="Unreals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 8 )
@@ -62,7 +61,6 @@ number_of_target = 1
 minimum_rayon = Vector3( 480, 480, 480 )
 maximum_rayon = Vector3( 520, 520, 520 )
 maximum_rotation_velocity = 0.01
-maximum_velocity = 20.0
 
 [node name="Reals" type="Spatial" parent="."]
 
