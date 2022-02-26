@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 WorldManager="*res://autoloads/world-manager.gd"
 SceneManager="*res://autoloads/scene-manager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 forward={
