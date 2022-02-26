@@ -7,6 +7,7 @@ onready var reals : Spatial = $Reals
 onready var unreals : Spatial = $Unreals
 onready var arrows : Spatial = $Arrows
 
+var click_count: int = 0
 
 func _ready():
 	# Connect all real signal
@@ -32,7 +33,9 @@ func _process(_delta):
 
 
 func _on_Target_destroy():
-	player.exit_world()
+	click_count += 1
+	if click_count >= 3:
+		player.exit_world()
 	
 func _on_Unreal_Target_destroy(node : Spatial) -> void:
 	var i_real : int = randi() % reals.get_child_count()
@@ -49,8 +52,9 @@ func _on_Unreal_Target_destroy(node : Spatial) -> void:
 	arrow.transform.basis.z = arrow.transform.basis.x.cross(arrow.transform.basis.y).normalized()
 
 func _on_Target_destroyed():
-	if WorldManager.has_next_world():
-		WorldManager.goto_next_world()
-	else:
-		print("Game Finish")
+	if click_count >= 3:
+		if WorldManager.has_next_world():
+			WorldManager.goto_next_world()
+		else:
+			print("Game Finish")
 

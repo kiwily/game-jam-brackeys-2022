@@ -8,7 +8,7 @@
 [sub_resource type="SphereShape" id=13]
 radius = 1.5
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=14]
 vertex_color_use_as_albedo = true
 params_blend_mode = 1
 params_billboard_mode = 3
@@ -18,12 +18,12 @@ particles_anim_loop = false
 albedo_texture = ExtResource( 4 )
 
 [sub_resource type="QuadMesh" id=6]
-material = SubResource( 5 )
+material = SubResource( 14 )
 
 [sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=15]
 params_blend_mode = 1
 params_billboard_mode = 3
 particles_anim_h_frames = 1
@@ -32,7 +32,7 @@ particles_anim_loop = false
 albedo_texture = ExtResource( 3 )
 
 [sub_resource type="QuadMesh" id=9]
-material = SubResource( 8 )
+material = SubResource( 15 )
 
 [sub_resource type="Curve" id=10]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
