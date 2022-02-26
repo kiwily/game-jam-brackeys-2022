@@ -17,6 +17,7 @@ arrow_scene = ExtResource( 7 )
 environment = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+blur = false
 
 [node name="Lights" type="Spatial" parent="."]
 

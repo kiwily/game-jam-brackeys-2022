@@ -5,6 +5,7 @@ signal world_exited
 
 var travel_sound = preload("res://assets/audio/travel.wav")
 
+export (bool) var blur : bool = true
 export (float) var max_forward_speed : float = 10
 export (float) var rotation_speed : float = 10
 export (float) var acceleration : float = 10
@@ -91,6 +92,7 @@ func _input(event):
 		rotate_object_local(Vector3(1, 0, 0), deg2rad(event.relative.y * mouse_sensitivity * -1))
 
 func enter_world():
+	$Camera.environment.dof_blur_far_enabled = blur
 	animation_player_world.play("world-in")
 
 func exit_world():

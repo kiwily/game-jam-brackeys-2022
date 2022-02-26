@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://worlds/world.gd" type="Script" id=1]
 [ext_resource path="res://objects/saturn-object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://texts/instructions-world-3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://target-manager/target-manager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/my-saturn-object.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/arrow.tscn" type="PackedScene" id=8]
@@ -75,3 +76,6 @@ maximum_spawn_distance = Vector3( 0, 0, 0 )
 minimum_rayon = Vector3( 10, 10, 10 )
 
 [node name="Arrows" type="Spatial" parent="."]
+
+[node name="instructions" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-05, 0, 1000, 0, 1000, 0, -1000, 0, -4.37114e-05, -5000, 0, 2500 )

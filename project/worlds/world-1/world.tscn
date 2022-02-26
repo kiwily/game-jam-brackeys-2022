@@ -10,6 +10,7 @@
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+blur = false
 
 [node name="Lights" type="Spatial" parent="."]
 
@@ -41,8 +42,8 @@ light_specular = 2.0
 object_scene = ExtResource( 1 )
 object_scale = 0.5
 number_of_target = 1
-minimum_spawn_distance = Vector3( 0, 0.3, -2 )
-maximum_spawn_distance = Vector3( 0, 0.3, -2 )
+minimum_spawn_distance = Vector3( -1.5, -0.7, -2 )
+maximum_spawn_distance = Vector3( -1.5, -0.7, -2 )
 start_with_random_angle = false
 maximum_rayon = Vector3( 0, 0, 0 )
 maximum_rotation_velocity = 0.0
@@ -52,8 +53,8 @@ maximum_velocity = Vector3( 0, 0, 0 )
 object_scene = ExtResource( 1 )
 object_scale = 0.5
 number_of_target = 1
-minimum_spawn_distance = Vector3( 0, -0.2, -2 )
-maximum_spawn_distance = Vector3( 0, -0.2, -2 )
+minimum_spawn_distance = Vector3( 1.5, -0.7, -2 )
+maximum_spawn_distance = Vector3( 1.5, -0.7, -2 )
 start_with_random_angle = false
 maximum_rayon = Vector3( 0, 0, 0 )
 maximum_rotation_velocity = 0.0
