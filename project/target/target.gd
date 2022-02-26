@@ -22,9 +22,10 @@ func init_object_movement(rayons : Vector3, new_velocities : Vector3, new_rotati
 	
 	# Random initial deplacement
 	if start_with_random_angle:
-		rotate_x(new_velocities.x * randf() * 100)
-		rotate_y(new_velocities.y * randf() * 100)
-		rotate_z(new_velocities.z * randf() * 100)
+		var v : Vector3 = new_velocities.normalized()
+		rotate_x(v.x * randf() * 1000)
+		rotate_y(v.y * randf() * 1000)
+		rotate_z(v.z * randf() * 1000)
 	
 	# Set velocities
 	velocities = new_velocities

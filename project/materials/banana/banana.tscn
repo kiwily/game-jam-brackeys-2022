@@ -4,11 +4,11 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
-albedo_color = Color( 0.215686, 0.898039, 0.0509804, 1 )
+albedo_color = Color( 0.898039, 0.878431, 0.0509804, 1 )
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
-albedo_color = Color( 0.862745, 0.933333, 0.0352941, 1 )
+albedo_color = Color( 0.0352941, 0.933333, 0.415686, 1 )
 
 [node name="banana" instance=ExtResource( 1 )]
 

@@ -48,7 +48,7 @@ maximum_spawn_distance = Vector3( 0, 0.3, -2 )
 start_with_random_angle = false
 maximum_rayon = Vector3( 0, 0, 0 )
 maximum_rotation_velocity = 0.0
-maximum_velocity = 0.0
+maximum_velocity = Vector3( 0, 0, 0 )
 
 [node name="Start2" parent="Reals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 1 )
@@ -59,7 +59,7 @@ maximum_spawn_distance = Vector3( 0, -0.2, -2 )
 start_with_random_angle = false
 maximum_rayon = Vector3( 0, 0, 0 )
 maximum_rotation_velocity = 0.0
-maximum_velocity = 0.0
+maximum_velocity = Vector3( 0, 0, 0 )
 
 [node name="Start3" parent="Reals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 1 )
@@ -70,7 +70,7 @@ maximum_spawn_distance = Vector3( 0, -0.7, -2 )
 start_with_random_angle = false
 maximum_rayon = Vector3( 0, 0, 0 )
 maximum_rotation_velocity = 0.0
-maximum_velocity = 0.0
+maximum_velocity = Vector3( 0, 0, 0 )
 
 [node name="Title" parent="." instance=ExtResource( 6 )]
 transform = Transform( 800, 0, 0, 0, 800, 0, 0, 0, 800, 0, 100, -1500 )
