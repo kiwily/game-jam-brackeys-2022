@@ -24,9 +24,6 @@ onready var raycast : RayCast = $RayCast
 var raycast_collider : Object
 var is_crosshair_locked : bool = false
 
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 func _process(delta) -> void:
 	process_raycast()
 	process_input()

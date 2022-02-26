@@ -15,8 +15,8 @@ export (Vector3) var maximum_rayon : Vector3 = Vector3(20, 20, 20)
 
 export (float) var maximum_rotation_velocity : float = .5
 export (float) var minimum_rotation_velocity : float = 0
-export (Vector3) var maximum_velocity : Vector3 = Vector3(.1, .1, .1)
 export (Vector3) var minimum_velocity : Vector3 = Vector3(0, 0, 0)
+export (Vector3) var maximum_velocity : Vector3 = Vector3(.1, .1, .1)
 
 export (PackedScene) var target_scene: PackedScene
 

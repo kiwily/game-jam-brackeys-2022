@@ -49,10 +49,12 @@ maximum_spawn_distance = Vector3( 15, 15, 15 )
 object_scene = ExtResource( 2 )
 object_scale = 100.0
 number_of_target = 4
-maximum_spawn_distance = Vector3( 100, 100, 100 )
+minimum_spawn_distance = Vector3( 0, 0, 0 )
+maximum_spawn_distance = Vector3( 0, 0, 0 )
 minimum_rayon = Vector3( 400, 400, 400 )
 maximum_rayon = Vector3( 600, 600, 600 )
 maximum_rotation_velocity = 0.2
+minimum_velocity = Vector3( 0.1, 0.1, 0.1 )
 
 [node name="Far" parent="Unreals" instance=ExtResource( 5 )]
 object_scene = ExtResource( 2 )
@@ -71,6 +73,5 @@ number_of_target = 1
 minimum_spawn_distance = Vector3( 0, 0, 0 )
 maximum_spawn_distance = Vector3( 0, 0, 0 )
 minimum_rayon = Vector3( 10, 10, 10 )
-maximum_rayon = Vector3( 50, 50, 50 )
 
 [node name="Arrows" type="Spatial" parent="."]
