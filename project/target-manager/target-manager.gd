@@ -15,8 +15,8 @@ export (Vector3) var maximum_rayon : Vector3 = Vector3(20, 20, 20)
 
 export (float) var maximum_rotation_velocity : float = .5
 export (float) var minimum_rotation_velocity : float = 0
-export (float) var maximum_velocity : float = .1
-export (float) var minimum_velocity : float = 0
+export (Vector3) var maximum_velocity : Vector3 = Vector3(.1, .1, .1)
+export (Vector3) var minimum_velocity : Vector3 = Vector3(0, 0, 0)
 
 export (PackedScene) var target_scene: PackedScene
 
@@ -43,9 +43,9 @@ func add_target_at_random() -> void:
 	
 	# Velocity
 	var target_velocities : Vector3 = Vector3(
-		atan((minimum_velocity + (maximum_velocity - minimum_velocity) * rng.randfn()) / (1 + target_rayons.x)),
-		atan((minimum_velocity + (maximum_velocity - minimum_velocity) * rng.randfn()) / (1 + target_rayons.y)),
-		atan((minimum_velocity + (maximum_velocity - minimum_velocity) * rng.randfn()) / (1 + target_rayons.z))
+		atan((minimum_velocity.x + (maximum_velocity.x - minimum_velocity.x) * rng.randfn()) / (1 + target_rayons.x)),
+		atan((minimum_velocity.y + (maximum_velocity.y - minimum_velocity.y) * rng.randfn()) / (1 + target_rayons.y)),
+		atan((minimum_velocity.z + (maximum_velocity.z - minimum_velocity.z) * rng.randfn()) / (1 + target_rayons.z))
 	)
 
 	var target_rotation_velocities : Vector3 = Vector3(

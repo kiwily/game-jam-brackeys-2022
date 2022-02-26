@@ -61,7 +61,6 @@ number_of_target = 20
 minimum_rayon = Vector3( 180, 180, 180 )
 maximum_rayon = Vector3( 220, 220, 220 )
 maximum_rotation_velocity = 0.2
-maximum_velocity = 0.04
 
 [node name="BigCar" parent="Unreals" instance=ExtResource( 2 )]
 object_scene = ExtResource( 6 )
@@ -71,7 +70,6 @@ minimum_rayon = Vector3( 900, 900, 900 )
 maximum_rayon = Vector3( 1100, 1100, 1100 )
 maximum_rotation_velocity = 0.2
 minimum_rotation_velocity = 0.001
-maximum_velocity = 20.0
 
 [node name="Spatial" parent="." instance=ExtResource( 8 )]
 transform = Transform( 500, 0, 0, 0, 500, 0, 0, 0, 500, -800, 0, -1000 )
